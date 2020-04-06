@@ -6,6 +6,8 @@ Game::Game()
     TCODConsole::initRoot(80, 50, "Libtcod Test", false, TCOD_RENDERER_SDL2);
     TCODSystem::setFps(30);
     TCODMouse::showCursor(true);
+
+    region = Region();
 }
 
 void Game::Update()
@@ -33,6 +35,12 @@ void Game::Update()
 void Game::Render()
 {
     TCODConsole::root->clear();
+
+    // Render all terrain for the region
+    for (int x = 0; x < region.MAX_X; x++)
+        for (int y = 0; y < region.MAX_Y; y++) {
+            TCODConsole::root->putChar(x, y, region.ter(x, y)->ch);
+        }
 
     TCODConsole::root->putChar(40, 25, '@');
 

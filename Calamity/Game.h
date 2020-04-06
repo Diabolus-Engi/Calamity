@@ -1,4 +1,5 @@
 #pragma once
+#include "Region.h"
 
 class Game {
 public:
@@ -9,5 +10,8 @@ public:
 	// Constructors
 	Game();
 
+
+private:
+	Region region;
 
 };
