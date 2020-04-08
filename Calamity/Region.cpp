@@ -10,6 +10,18 @@ Region::Region()
 		}
 }
 
+Region::~Region()
+{
+	// TODO: Delete pointers for entities etc
+	for (Entity * e : entities) {
+		delete e;
+	}
+
+	for (Kingdom* k : kingdoms) {
+		delete k;
+	}
+}
+
 const Ter * Region::ter(int x, int y)
 {
 	return terrain.at(x + y * MAX_X);
