@@ -12,7 +12,6 @@ Region::Region()
 
 Region::~Region()
 {
-	// TODO: Delete pointers for entities etc
 	for (Entity * e : entities) {
 		delete e;
 	}

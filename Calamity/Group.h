@@ -15,10 +15,6 @@ public:
 	int exp; //Exp awarded
 	int size; //Total units
 	int type; //TODO: Change this to a class and apply CR into it.
-	double cr; //Combat rating
-	int hp; 
-	int dv; //Defensive value
-	int om; //Offensive value
 	int speed;
 	int morale;
 	Character* commander;

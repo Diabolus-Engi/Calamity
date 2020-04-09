@@ -11,9 +11,10 @@ int main() {
     // Config
     std::string cfg_str;
     cfg_str = "window.title='Calamity';";
-    cfg_str.append("window.size=144x48;");
+    cfg_str.append("window.size="+std::to_string(Game::SCREEN_WIDTH)+"x"+ std::to_string(Game::SCREEN_HEIGHT)+";");
     cfg_str.append("window.resizeable=true;");
     cfg_str.append("input.alt-functions=true;");
+    cfg_str.append("input.filter=[keyboard, mouse+];");
     cfg_str.append("log.file='calamity_log';");
 
     terminal_set(cfg_str.c_str());
