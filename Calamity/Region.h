@@ -9,13 +9,19 @@
 // Terrain
 class Ter {
 public:
-	Ter(char ch, color_t col = color_from_name("yellow")) {
+	Ter(const char ch, const char *col = "yellow", const char *bkcol = "black") {
 		this->ch = ch;
-		this->col = col;
+		this->col = color_from_name(col);
+		this->bkcol = color_from_name(bkcol);
+		col_s = col;
+		bkcol_s = bkcol;
 	}
 
 	char ch;
 	color_t col;
+	color_t bkcol;
+	const char* bkcol_s;
+	const char* col_s;
 };
 
 
@@ -45,7 +51,7 @@ public:
 };
 
 
-const Ter grassland = Ter('.', color_from_name("red"));
-const Ter forest = Ter('F', color_from_name("green"));
+const Ter grassland = Ter(',', "green", "darker green");
+const Ter forest = Ter('F', "green");
 
 

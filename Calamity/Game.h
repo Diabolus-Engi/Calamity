@@ -13,12 +13,9 @@ enum class GAME_STATE {
 	CLOSING
 };
 
-
-
 class Game {
 public:
-	void Update();
-
+	bool Update();
 	void Render();
 	
 	// Constructors
@@ -32,7 +29,8 @@ public:
 	Point2D last_mouse_pos;
 
 	// Player entity
-	Entity * player;
+	Entity* player = nullptr;
+	Entity* selected_entity = nullptr;
 
 	// Camera
 	Camera camera;
@@ -40,6 +38,8 @@ public:
 	// Screen details
 	static int SCREEN_WIDTH, SCREEN_HEIGHT;
 
+	Point2D screen_to_world(int x, int y);
+	Point2D screen_to_world(Point2D xy);
 
 private:
 	Region region;

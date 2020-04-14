@@ -1,12 +1,12 @@
 #pragma once
 #include "Alignment.h"
 #include <string>
-#include "Character.h"
+#include "Entity.h"
 
 class Group : public Entity {
 public:
 
-	Group(std::string n, Alignment a, int s);
+	Group(std::string n, Alignment a, int s, Kingdom *owner);
 
 	// Stat block for group
 

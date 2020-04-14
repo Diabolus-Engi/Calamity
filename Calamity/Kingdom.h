@@ -1,7 +1,8 @@
 #pragma once
 #include <string>
 #include "Alignment.h"
-#include "Character.h"
+
+class Character;
 
 
 class Kingdom {
@@ -12,17 +13,12 @@ public:
 	// Positions
 	Character * ruler;
 
-	// Stats
-	int build_points = 50; //Build points
-	int consumption;
-	int economy;
-	int loyalty;
-	int size;
-	int stability;
-	int treasury;
-	int unrest;	
+	// Color and visual details
 
-	Kingdom(std::string n, Alignment a);
+	const char * col_s;
+
+
+	Kingdom(std::string n, Alignment a, const char *c);
 
 private:
 

@@ -3,6 +3,7 @@
 #include <string>
 #include "Entity.h"
 #include "Alignment.h"
+#include "Kingdom.h"
 
 class Character : public Entity {
 public:
@@ -18,7 +19,7 @@ public:
 	int charisma;
 
 	Character();
-	Character(std::string n, Alignment a, Point2D pos = { 0,0 });
+	Character(std::string n, Alignment a, Point2D pos, Kingdom *owner);
 
 };
 	

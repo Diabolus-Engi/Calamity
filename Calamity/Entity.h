@@ -1,5 +1,8 @@
 #pragma once
 #include "Utility.h"
+#include "Kingdom.h"
+
+class Kingdom;
 
 struct EntityID {
 	int guid;
@@ -12,8 +15,11 @@ public:
 	Point2D pos;
 	EntityID id;
 	char ch;
-	Entity(Point2D p, char c);
+	Kingdom *owner;
+	Entity(Point2D p, char c, Kingdom *owner);
 	virtual ~Entity();
+
+
 };
 
 
